@@ -25,6 +25,7 @@ class App extends Component {
   async getCurrentUser() {
     let token = localStorage.getItem("token");
     try {
+
       //get username from token
       let { username } = decode(token);
 
@@ -52,12 +53,12 @@ class App extends Component {
 
     // let background = this.state.currentUser ? "" : "https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_1280.jpg";
     let background = this.state.currentUser ? "" : "https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
- 
+
     return (
 
       <CurrentUserContext.Provider value={this.state.currentUser}>
         <main>
-          <div className="App" style={{ background: `url(${background})`}}>
+          <div className="App" style={{ background: `url(${background})` }}>
             <BrowserRouter>
               <Nav handleLogout={this.handleLogout} />
               <div className="app-wrap">
